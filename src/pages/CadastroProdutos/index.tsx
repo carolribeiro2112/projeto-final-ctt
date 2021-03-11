@@ -1,7 +1,6 @@
 import React from 'react';
 
 import Sidebar from '../../components/Sidebar';
-import Input from '../../components/Input';
 import Button from '../../components/Button';
 
 import {Container, Content} from './styles';
@@ -12,10 +11,10 @@ const CadastroProdutos = () => {
       <Sidebar/>
       <Content>
         <h1>Cadastrar novo produto</h1>
-        <Input name="title" />
-        <Input name="price"/>
-        <Input name="description"/>
-        <Input name="image"/>
+        <input name="title" />
+        <input name="price"/>
+        <input name="description"/>
+        <input name="image"/>
         <Button>Cadastrar produto</Button>
       </Content>  
     </Container>
