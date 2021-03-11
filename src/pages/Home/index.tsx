@@ -1,16 +1,20 @@
 import React from 'react';
 
 import Sidebar from '../../components/Sidebar';
-import { Container } from './styles';
+import { Container, Content } from './styles';
 
 const Home = () => {
   return(
     <Container>
       <Sidebar/>
-      <div>
-        <p>usuários: 60</p>
-        <p>produtos: 100</p>
-      </div>
+      <Content>
+        <div className="quantity">
+          <p>usuários: 60</p>
+        </div>
+        <div className="quantity">
+          <p>produtos: 100</p>
+        </div>
+      </Content>
     </Container>
   )
 }

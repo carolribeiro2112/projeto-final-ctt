@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   height: 100vh;
-  width: 15vw;
+  min-width: 120px;
   
   display: flex;
   flex-direction:column;
@@ -13,6 +13,7 @@ export const Container = styled.div`
   aside{
     margin-top: 40px;
     margin-left: 20px;
+    margin-right: 20px;
     a{
       display: block;
       margin-bottom: 8px;
