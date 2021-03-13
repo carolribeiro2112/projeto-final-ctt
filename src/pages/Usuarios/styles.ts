@@ -25,6 +25,18 @@ export const Content = styled.div`
 
     border-radius: 10px 10px 0 0;
   }
+
+  .link{
+    text-align: center;
+    margin-top: 50px;
+
+    a{
+      text-decoration:none;
+      background-color: yellow;
+      padding:20px;
+      border-radius: 8px;
+    }
+  }
 `;
 
 export const Card = styled.div`

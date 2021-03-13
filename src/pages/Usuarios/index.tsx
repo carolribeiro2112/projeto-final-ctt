@@ -48,7 +48,9 @@ const Usuarios = () => {
           ))
         }
         
-        <Link to="new-user">Cadastrar novo usuário</Link>
+        <div className='link'>
+          <Link to="new-user">Cadastrar novo usuário</Link>
+        </div>
       </Content>
     </Container>
   )

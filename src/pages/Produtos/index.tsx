@@ -58,7 +58,9 @@ const Produtos = () => {
           ))
         }
         
-        <Link to="/new-product">Cadastrar novo produto</Link>
+        <div className='link'>
+          <Link to="/new-product">Cadastrar novo produto</Link>
+        </div>
       </Content>
     </Container>
   )
