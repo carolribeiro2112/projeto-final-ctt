@@ -18,4 +18,5 @@ export interface Users {
   email: string,
   role: string,
   password: string,
+  quantity: number,
 }

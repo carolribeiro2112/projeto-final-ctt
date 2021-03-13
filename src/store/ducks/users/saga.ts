@@ -1,7 +1,9 @@
 import { put, call } from 'redux-saga/effects';
-import {AxiosResponse} from 'axios';
+
 import UsersService from '../../../services/users-service';
-import { getUsersFailure, getUsersSuccess } from './actions';
+import {AxiosResponse} from 'axios';
+
+import { deleteUsersFailure, deleteUsersSuccess, getUsersFailure, getUsersSuccess, postUsersFailure, postUsersSuccess } from './actions';
 
 export function* getUsers() {
   try{
@@ -10,5 +12,25 @@ export function* getUsers() {
   }catch (err){
     console.log(err)
     yield put(getUsersFailure())
+  }
+}
+
+export function* postUsers(action:any) {
+  try{
+    const response: AxiosResponse = yield call(UsersService.postUsers, action.payload);
+    yield put(postUsersSuccess(response.data))
+  } catch (err) {
+    console.log(err)
+    yield put(postUsersFailure())
+  }
+}
+
+export function* deleteUsers(action:any) {
+  try{
+    yield call(UsersService.deleteUsers, action.payload);
+    yield put(deleteUsersSuccess())
+  } catch (err) {
+    console.log(err)
+    yield put(deleteUsersFailure())
   }
 }

@@ -27,6 +27,40 @@ const UsersReducer: Reducer = (state=initialState, action) => {
         loading: false,
         error: true,
       }
+    case UsersTypes.POST_USERS_REQUEST:
+      return{
+        ...state,
+        loading:true,
+      }
+    case UsersTypes.POST_USERS_SUCCESS:
+      return{
+        ...state,
+        users: action.payload,
+        loading: false,
+      }
+    case UsersTypes.POST_USERS_FAILURE:
+      return{
+        ...state,
+        loading: false,
+      }
+    
+    case UsersTypes.DELETE_USERS_REQUEST:
+      return{
+        ...state,
+        loading: true,
+      }
+    case UsersTypes.DELETE_USERS_SUCCESS:
+      return {
+        ...state,
+        users: action.payload,
+        loading: false
+      }
+
+    case UsersTypes.DELETE_USERS_FAILURE:
+      return{
+        ...state,
+        loading:false 
+      }
     default:
         return state
     }

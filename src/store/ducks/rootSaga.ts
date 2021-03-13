@@ -4,7 +4,7 @@ import {postUserLogin} from './login/saga';
 import { ProductsTypes } from './products/types';
 import {deleteProducts, getProducts, postProducts} from './products/saga';
 import { UsersTypes } from './users/types';
-import { getUsers } from './users/saga';
+import { deleteUsers, getUsers, postUsers } from './users/saga';
 
 export default function* rootSaga():any {
   return yield all([
@@ -15,5 +15,7 @@ export default function* rootSaga():any {
     takeLatest(ProductsTypes.DELETE_PRODUCTS_REQUEST, deleteProducts),
 
     takeLatest(UsersTypes.GET_USERS_REQUEST,getUsers),
+    takeLatest(UsersTypes.POST_USERS_REQUEST, postUsers),
+    takeLatest(UsersTypes.DELETE_USERS_REQUEST, deleteUsers),
   ])
 }

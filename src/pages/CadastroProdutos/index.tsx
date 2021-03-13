@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useDispatch} from 'react-redux';
 
 import Sidebar from '../../components/Sidebar';
 import Button from '../../components/Button';
@@ -7,7 +8,6 @@ import Button from '../../components/Button';
 import * as ProductsActions from '../../store/ducks/products/actions';
 
 import {Container, Content} from './styles';
-import { useDispatch} from 'react-redux';
 
 const CadastroProdutos = () => {
   

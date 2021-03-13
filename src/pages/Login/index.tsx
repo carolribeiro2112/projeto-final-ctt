@@ -12,6 +12,7 @@ import { Redirect } from 'react-router';
 
 const Login = () => {
   const [authorized, setAutorized] = useState<Boolean>(false)
+  const [refresh, setRefresh] = useState(true)
 
   const {register, handleSubmit} = useForm()
   const dispatch = useDispatch()
@@ -22,6 +23,7 @@ const Login = () => {
     if(token) {
       setAutorized(true)
     }
+    setRefresh(!refresh)
   }
 
   const onSubmit = (data:any) => {

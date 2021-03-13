@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 import Sidebar from '../../components/Sidebar';
-import { getUsersRequest } from '../../store/ducks/users/actions';
+import { deleteUsersRequest, getUsersRequest } from '../../store/ducks/users/actions';
 
 import {Container, Content, Card} from './styles';
 
@@ -15,9 +15,18 @@ const Usuarios = () => {
   const userState = useSelector((state:any)=> state.UsersReducer.users)
 
   useEffect(() => {
-    dispatch(getUsersRequest)
+    dispatch(getUsersRequest())
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
+
+  const deleteUser = (id:any) => {
+    try{
+      dispatch(deleteUsersRequest(id));
+    }catch(err) {
+      console.log(err)
+    }
+    dispatch(getUsersRequest());
+  }
 
   return(
     <Container>
@@ -30,11 +39,11 @@ const Usuarios = () => {
           <p>Excluir</p>
         </div>
         {
-          userState.map((item:any)=> (
+          userState?.map((item:any)=> (
             <Card key={item.id}>
               <p>{item.name}</p>
               <p>{item.role}</p>
-              <FiTrash2 size={20}/>
+              <FiTrash2 size={20} onClick={() => deleteUser(item.id)}/>
             </Card>
           ))
         }
