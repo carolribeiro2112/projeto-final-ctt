@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container } from './styles';
+
+import LogoImg from '../../assets/logo.svg';
+import LogoImg2 from '../../assets/logo2.svg';
+
+import { Container, Logo } from './styles';
 
 const Sidebar = () => {
   const userRole = localStorage.getItem('role')
@@ -8,7 +12,10 @@ const Sidebar = () => {
   return (
     <Container>
       <aside>
-        <h2>Dashboard</h2>
+        <Logo>
+          <img src={LogoImg2} alt=""/>
+          <img src={LogoImg} alt=""/>
+        </Logo>
         <Link to='/home'>Home</Link>
         {
           userRole === 'admin' && <Link to='/users'>Usuários</Link>

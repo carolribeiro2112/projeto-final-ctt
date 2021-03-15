@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch} from 'react-redux';
+import toast,{ Toaster } from 'react-hot-toast';
 
 import Sidebar from '../../components/Sidebar';
 import Button from '../../components/Button';
@@ -17,6 +18,7 @@ const CadastroProdutos = () => {
   
   const onSubmit = (newBeer:any) => {
     dispatch(ProductsActions.postProductsRequest(newBeer))
+    toast.success('Seu cadastro foi feito com sucesso')
   }
 
   return(
@@ -34,6 +36,7 @@ const CadastroProdutos = () => {
         </form>
           
       </Content>  
+      <Toaster/>
     </Container>
   )
 }

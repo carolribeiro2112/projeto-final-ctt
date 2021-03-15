@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Header from '../../components/Header';
 
 import Sidebar from '../../components/Sidebar';
 import { getProductsRequest } from '../../store/ducks/products/actions';
 import { getUsersRequest } from '../../store/ducks/users/actions';
-import { Container, Content } from './styles';
+import { Container, Content, Page } from './styles';
 
 const Home = () => {
-
-  const userName = localStorage.getItem('name')
 
   const amountUsers = useSelector((state:any)=> state.UsersReducer.users)
   const amountSizeUsers = amountUsers.length;
@@ -27,15 +26,19 @@ const Home = () => {
   return(
     <Container>
       <Sidebar/>
-      <Content>
-        <p>{userName}</p>
-        <div className="quantity">
-          <p>usuários: {amountSizeUsers}</p>
-        </div>
-        <div className="quantity">
-          <p>produtos: {amountSizeProducts}</p>
-        </div>
-      </Content>
+
+      <Page>
+        <Header/>
+        <Content>
+          <div className="quantity">
+            <p>usuários: {amountSizeUsers}</p>
+          </div>
+          <div className="quantity">
+            <p>produtos: {amountSizeProducts}</p>
+          </div>
+        </Content>
+      </Page>
+
     </Container>
   )
 }

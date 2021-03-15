@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   height: 200vh;
-  min-width: 120px;
+  width: 250px;
   
   display: flex;
   flex-direction:column;
   align-items: stretch;
-  background-color: #312E38;
+  background-color: #F1E5B3;
   font-size: 24px;
 
   aside{
@@ -17,8 +17,26 @@ export const Container = styled.div`
     a{
       display: block;
       margin-bottom: 8px;
-      color: #FFFFFF;
+      color: #393831;
+      font-weight: bold;
       text-decoration: none;
+      transition: color 0.2s;
+
+      &:hover{
+        color:  #ffa935;
+      }
     }
+  }
+`;
+
+export const Logo = styled.div`
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 340px;
+
+  margin: 30px auto;
+  img {
+    height: 80px;
   }
 `;

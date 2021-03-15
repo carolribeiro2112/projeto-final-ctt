@@ -17,6 +17,19 @@ form{
     width: 100%;
     height: 56px;
     border-radius: 10px;
+    border: none;
   }
 }
+`;
+
+export const Logo = styled.div`
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 340px;
+
+  margin: 100px auto;
+  img {
+    height: 80px;
+  }
 `;

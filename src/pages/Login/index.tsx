@@ -7,7 +7,10 @@ import * as LoginActions from '../../store/ducks/login/actions';
 
 import Button from '../../components/Button';
 
-import {Container} from './styles'
+import LogoImg from '../../assets/logo.svg';
+import LogoImg2 from '../../assets/logo2.svg';
+
+import {Container, Logo} from './styles'
 import { Redirect } from 'react-router';
 
 const Login = () => {
@@ -34,7 +37,10 @@ const Login = () => {
 
   return(
     <Container>
-      <h1>Login</h1>
+      <Logo>
+          <img src={LogoImg2} alt=""/>
+          <img src={LogoImg} alt=""/>
+        </Logo>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input ref={register} name="email"  type="text" placeholder="E-mail"/>
         <input ref={register} name="password"  type="password" placeholder="Senha"/>

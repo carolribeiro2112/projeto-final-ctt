@@ -4,12 +4,16 @@ export const Container = styled.div`
   display: flex;
 `;
 
+export const Page = styled.div`
+  margin: 0 auto;
+`;
+
 export const Content = styled.div`
   display: flex;
   max-width: 800px;
   margin: 100px auto;
-  align-items: flex-start;
-
+  align-items: center;
+  justify-content: center;
 
   .quantity {
     width: 175px;
