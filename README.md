@@ -32,3 +32,11 @@ $ yarn
 
 $ json-server db.json -m ./node_modules/json-server-auth -r routes.json --port 4000
 
+## Usuários e senhas pré-definidas
+### Login administrador
+
+email: helen@facebook.com | senha: 123123
+
+### Login editor
+email: mauricio@google.com | senha: 123123
+
