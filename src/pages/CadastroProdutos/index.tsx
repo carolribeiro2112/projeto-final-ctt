@@ -12,7 +12,7 @@ import {Container, Content} from './styles';
 
 const CadastroProdutos = () => {
   
-  const {register, handleSubmit} = useForm()
+  const {register, handleSubmit, errors} = useForm()
   const dispatch = useDispatch()
 
   
@@ -28,10 +28,14 @@ const CadastroProdutos = () => {
         <h1>Cadastrar novo produto</h1>
 
         <form onSubmit={handleSubmit(onSubmit)}>
-          <input ref={register} name="title" type="text" placeholder="título"/>
-          <input ref={register} name="price" type="text" placeholder="preço"/>
-          <input ref={register} name="description" type="text" placeholder="descrição"/>
-          <input ref={register} name="image" type="text" placeholder="url da imagem"/>
+          <input ref={register ({required:true})} name="title" type="text" placeholder="Título"/>
+          {errors.title && <p>Campo obrigatório</p>}
+          <input ref={register ({required:true})} name="price" type="text" placeholder="Preço R$"/>
+          {errors.price && <p>Campo obrigatório</p>}
+          <input ref={register ({required:true})} name="description" type="text" placeholder="Descrição"/>
+          {errors.description && <p>Campo obrigatório</p>}
+          <input ref={register ({required:true})} name="image" type="text" placeholder="Url da imagem"/>
+          {errors.image && <p>Campo obrigatório</p>}
           <Button type="submit">Cadastrar produto</Button>
         </form>
           

@@ -11,7 +11,7 @@ import * as UsersActions from '../../store/ducks/users/actions';
 import {Container, Content} from './styles';
 
 const CadastroUsuario = () => {
-  const {register, handleSubmit} = useForm()
+  const {register, handleSubmit, errors } = useForm()
   const dispatch = useDispatch()
 
   const onSubmit = (newUser:any) => {
@@ -25,10 +25,14 @@ const CadastroUsuario = () => {
       <Content>
         <h1>Cadastrar novo usuário</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <input ref={register} name="name" type="text" placeholder="name"/>
-          <input ref={register} name="email" type="text" placeholder="email"/>
-          <input ref={register} name="password" type="password" placeholder="senha"/>
-          <input ref={register} name="role" type="text" placeholder="role"/>
+          <input ref={register ({required:true})} name="name" type="text" placeholder="Nome"/>
+          {errors.name && <p>Campo Obrigatório</p>}
+          <input ref={register ({required:true})} name="email" type="text" placeholder="E-mail"/>
+          {errors.email && <p>Campo Obrigatório</p>}
+          <input ref={register ({required:true})} name="password" type="password" placeholder="Senha"/>
+          {errors.password && <p>Campo Obrigatório</p>}
+          <input ref={register ({required:true})} name="role" type="text" placeholder="Cargo ex: admin ou editor"/>
+          {errors.role && <p>Campo Obrigatório</p>}
           <Button type="submit">Cadastrar usuário</Button>
         </form>
         <Toaster/>

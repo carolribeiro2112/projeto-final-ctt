@@ -23,5 +23,6 @@ export const Content = styled.div`
     width: 100%;
     height: 56px;
     border-radius: 10px;
+    border: none;
   }
 `;

@@ -4,7 +4,6 @@ import { UsersTypes } from "./types";
 const initialState: any = {
   users: [],
   loading: false,
-  error: false
 }
 
 const UsersReducer: Reducer = (state=initialState, action) => {
@@ -19,13 +18,11 @@ const UsersReducer: Reducer = (state=initialState, action) => {
         ...state,
         loading: false,
         users: action.payload,
-        error: false,
       }
     case UsersTypes.GET_USERS_FAILURE:
       return {
         ...state,
         loading: false,
-        error: true,
       }
     case UsersTypes.POST_USERS_REQUEST:
       return{

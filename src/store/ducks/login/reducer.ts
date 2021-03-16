@@ -18,7 +18,7 @@ const LoginReducer: Reducer = (state=initialState, action) => {
     case LoginTypes.POST_LOGIN_SUCCESS:
       return{
         ...state,
-        usersArray: [...state.usersArray, action.payload],
+        usersArray: action.payload,
         loading:false,
       }
     
@@ -28,8 +28,8 @@ const LoginReducer: Reducer = (state=initialState, action) => {
         loading:false,
       }
     
-      default:
-        return state
+    default:
+      return state
   }
 }
 

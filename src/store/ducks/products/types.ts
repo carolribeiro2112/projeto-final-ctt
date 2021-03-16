@@ -24,5 +24,4 @@ export interface Products {
 export interface Beers {
   beers: Products[],
   loading: boolean,
-  error: boolean,
 }

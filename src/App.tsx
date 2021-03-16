@@ -19,8 +19,7 @@ function App() {
           {isLogged ? <Redirect to='/home'/> : <Redirect to='./'/>}
         </BrowserRouter>
       </Provider>
-      <GlobalStyle/>
-      
+      <GlobalStyle/> 
     </div>
   );
 }

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect, useHistory } from "react-router-dom";
+import { Redirect} from "react-router-dom";
 
 import * as LoginActions from '../../store/ducks/login/actions';
 
@@ -14,20 +14,14 @@ import LogoImg2 from '../../assets/logo2.svg';
 import {Container, Logo} from './styles';
 
 const Login = () => {
-  const setToken = useSelector((state:any)=> console.log(state.LoginReducer.usersArray.accessToken))
+  useSelector((state:any)=> state.LoginReducer.usersArray.accessToken)
 
   const {register, handleSubmit} = useForm();
   const dispatch = useDispatch();
-  const [auth, setAuth] = useState(false);
 
-  // const auth = localStorage.getItem('token')
+  const token = localStorage.getItem('token')
 
   const onSubmit = (data:any) => {
-    const token = localStorage.getItem('token')
-
-    if(token) {
-      setAuth(true)
-    }
     dispatch(LoginActions.postLoginRequest(data))
   }
 
@@ -44,7 +38,7 @@ const Login = () => {
         <Button type="submit">Login</Button>
 
         {
-          auth && <Redirect to="/home"/>
+          token && <Redirect to="/home"/>
         }
       </form>
     </Container>

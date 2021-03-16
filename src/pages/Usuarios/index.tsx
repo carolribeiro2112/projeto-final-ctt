@@ -38,7 +38,7 @@ const Usuarios = () => {
           <h1>Usuários Cadastrados</h1>
           <div className="list-header">
             <p>Nome</p>
-            <p>Role</p>
+            <p>Cargo</p>
             <p>Excluir</p>
           </div>
           {

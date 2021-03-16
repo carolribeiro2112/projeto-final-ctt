@@ -42,8 +42,8 @@ const Produtos = () => {
           {
               userRole === 'admin' && (
               <div className="list-header">
-                <p>nome</p>
-                <p>preço</p>
+                <p>Nome</p>
+                <p>Preço</p>
                 <p>Excluir</p>
               </div>
             )
@@ -51,8 +51,8 @@ const Produtos = () => {
           {
             userRole === 'editor' && (
               <div className="list-header-editor">
-                <p>nome</p>
-                <p>preço</p>            
+                <p>Nome</p>
+                <p>Preço</p>            
               </div>
             )
           }
