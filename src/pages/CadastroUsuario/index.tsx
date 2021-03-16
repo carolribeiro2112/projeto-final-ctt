@@ -25,7 +25,7 @@ const CadastroUsuario = () => {
       <Content>
         <h1>Cadastrar novo usuário</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <input ref={register ({required:true})} name="name" type="text" placeholder="Nome"/>
+          <input ref={register ({required:true})} name="name" type="text" data-testid="name" placeholder="Nome"/>
           {errors.name && <p>Campo Obrigatório</p>}
           <input ref={register ({required:true})} name="email" type="text" placeholder="E-mail"/>
           {errors.email && <p>Campo Obrigatório</p>}

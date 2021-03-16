@@ -28,8 +28,8 @@ const Login = () => {
   return(
     <Container>
       <Logo>
-        <img src={LogoImg2} alt=""/>
-        <img src={LogoImg} alt=""/>
+        <img src={LogoImg2} alt="Logo emporio da Cerveja"/>
+        <img src={LogoImg} alt="Emporio da Cerveja"/>
       </Logo>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input ref={register} name="email"  type="email" placeholder="E-mail"/>

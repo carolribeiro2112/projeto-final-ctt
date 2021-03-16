@@ -9,6 +9,7 @@ import {FiTrash2} from 'react-icons/fi';
 import {Container,Content, Card, Page, CardEditor} from './styles';
 import { deleteProductsRequest, getProductsRequest } from '../../store/ducks/products/actions';
 import Header from '../../components/Header';
+import { Products } from '../../store/ducks/products/types';
 
 const Produtos = () => {
   const userRole = localStorage.getItem('role')
@@ -22,7 +23,7 @@ const Produtos = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const deleteProduct = (id:any) => {
+  const deleteProduct = (id:number) => {
     try{
       dispatch(deleteProductsRequest(id));
     } catch (err){
@@ -60,7 +61,7 @@ const Produtos = () => {
 
           {
             userRole==='editor' &&
-            beerState?.map((item:any)=>(
+            beerState?.map((item:Products)=>(
               <CardEditor key={item.id}>
                 <p>{item.title}</p>
                 <p>{item.price}</p>             
@@ -72,7 +73,7 @@ const Produtos = () => {
           {
             userRole === 'admin' && (
               
-                beerState?.map((item:any)=>(
+                beerState?.map((item:Products)=>(
                   <Card key={item.id}>
                     <p>{item.title}</p>
                     <p>{item.price}</p>

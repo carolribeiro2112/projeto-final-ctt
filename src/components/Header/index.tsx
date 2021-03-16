@@ -13,8 +13,8 @@ const Header = () => {
 
   return(
     <Container>
-      <p>Seja bem-vindo(a) {userName}!</p>
-      <Link to="/"><FiLogOut size={20} onClick={()=>handleLogout()}/></Link>
+      <p data-testid="paragraph">Seja bem-vindo(a) {userName}!</p>
+      <Link data-testid="logout" to="/"><FiLogOut size={20} onClick={()=>handleLogout()}/></Link>
     </Container>
   )
 }

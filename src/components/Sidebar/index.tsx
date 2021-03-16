@@ -13,14 +13,14 @@ const Sidebar = () => {
     <Container>
       <aside>
         <Logo>
-          <img src={LogoImg2} alt=""/>
-          <img src={LogoImg} alt=""/>
+          <img src={LogoImg2} alt="Logo emporio da Cerveja"/>
+          <img src={LogoImg} alt="Emporio da Cerveja"/>
         </Logo>
-        <Link to='/home'>Home</Link>
+        <Link data-testid="home"to='/home' >Home</Link>
         {
-          userRole === 'admin' && <Link to='/users'>Usuários</Link>
+          userRole === 'admin' && <Link data-testid="usuario" to='/users'>Usuários</Link>
         }
-        <Link to='/products'>Produtos</Link>
+        <Link data-testid="products" to='/products'>Produtos</Link>
       </aside>
     </Container>
   )

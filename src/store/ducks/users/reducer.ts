@@ -1,7 +1,7 @@
 import { Reducer } from "redux";
-import { UsersTypes } from "./types";
+import { UsersTypes, UserState } from "./types";
 
-const initialState: any = {
+const initialState: UserState = {
   users: [],
   loading: false,
 }

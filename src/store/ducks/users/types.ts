@@ -20,3 +20,8 @@ export interface Users {
   password: string,
   quantity: number,
 }
+
+export interface UserState {
+  users: Users[],
+  loading: boolean,
+}

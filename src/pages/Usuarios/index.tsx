@@ -7,6 +7,7 @@ import Header from '../../components/Header';
 
 import Sidebar from '../../components/Sidebar';
 import { deleteUsersRequest, getUsersRequest } from '../../store/ducks/users/actions';
+import { Users } from '../../store/ducks/users/types';
 
 import {Container, Content, Card, Page} from './styles';
 
@@ -20,7 +21,7 @@ const Usuarios = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
-  const deleteUser = (id:any) => {
+  const deleteUser = (id:number) => {
     try{
       dispatch(deleteUsersRequest(id));
     }catch(err) {
@@ -42,7 +43,7 @@ const Usuarios = () => {
             <p>Excluir</p>
           </div>
           {
-            userState?.map((item:any)=> (
+            userState?.map((item:Users)=> (
               <Card key={item.id}>
                 <p>{item.name}</p>
                 <p>{item.role}</p>

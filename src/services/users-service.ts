@@ -7,13 +7,13 @@ const UsersService = {
     }
   }),
 
-  postUsers: (newUser:any) => api.post('/user', newUser, {
+  postUsers: (newUser:any) => api.post('/users', newUser, {
     headers: {
       'Authorization': `Bearer ${localStorage.getItem('token')}`
     }
   }),
 
-  deleteUsers: (id:any) => api.delete(`/users/${id}`, {
+  deleteUsers: (id:number) => api.delete(`/users/${id}`, {
     headers: {
       'Authorization': `Bearer ${localStorage.getItem('token')}`
     }
