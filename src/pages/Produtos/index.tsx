@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
+import {FiTrash2} from 'react-icons/fi';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { useDispatch, useSelector } from 'react-redux';
-
+import Header from '../../components/Header';
 import Sidebar from '../../components/Sidebar';
 
-import {FiTrash2} from 'react-icons/fi';
-import {Container,Content, Card, Page, CardEditor} from './styles';
 import { deleteProductsRequest, getProductsRequest } from '../../store/ducks/products/actions';
-import Header from '../../components/Header';
 import { Products } from '../../store/ducks/products/types';
+
+import {Container,Content, Card, Page, CardEditor} from './styles';
 
 const Produtos = () => {
   const userRole = localStorage.getItem('role')
