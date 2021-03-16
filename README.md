@@ -5,6 +5,7 @@
 ### Clonando o repositório
 
 $ git clone https://github.com/carolribeiro2112/projeto-final-ctt.git
+
 $ cd projeto-final-ctt
 
 ## Rodando em seu computador
