@@ -1,4 +1,4 @@
-# Getting Started 
+Projeto feito em React usando Typescript e Redux Saga , desenvolvido durante o Campinas Tech Talents, simulando um aplicativo de cadastro de usuários e produtos em dois níveis (administrador e editor). 
 
 ## Instalando o projeto
 
