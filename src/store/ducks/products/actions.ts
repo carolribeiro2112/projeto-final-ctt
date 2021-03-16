@@ -6,7 +6,7 @@ export const getProductsSuccess = (beers:any) => action(ProductsTypes.GET_PRODUC
 export const getProductsFailure = () => action(ProductsTypes.GET_PRODUCTS_FAILURE);
 
 export const postProductsRequest = (newBeer:any) => action(ProductsTypes.POST_PRODUCTS_REQUEST, newBeer);
-export const postProductsSuccess = (beers:any) => action(ProductsTypes.POST_PRODUCTS_SUCCESS, beers);
+export const postProductsSuccess = () => action(ProductsTypes.POST_PRODUCTS_SUCCESS);
 export const postProductsFailure = () => action(ProductsTypes.POST_PRODUCTS_FAILURE);
 
 export const deleteProductsRequest = (id:any) => action(ProductsTypes.DELETE_PRODUCTS_REQUEST,id);

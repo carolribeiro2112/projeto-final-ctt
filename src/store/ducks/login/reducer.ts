@@ -7,6 +7,7 @@ const initialState:any = {
 }
 
 const LoginReducer: Reducer = (state=initialState, action) => {
+
   switch(action.type) {
     case LoginTypes.POST_LOGIN_REQUEST:
       return {
@@ -17,7 +18,7 @@ const LoginReducer: Reducer = (state=initialState, action) => {
     case LoginTypes.POST_LOGIN_SUCCESS:
       return{
         ...state,
-        usersArray: action.payload.data,
+        usersArray: [...state.usersArray, action.payload],
         loading:false,
       }
     

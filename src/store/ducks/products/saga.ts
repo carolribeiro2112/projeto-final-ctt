@@ -18,8 +18,8 @@ export function* getProducts() {
 export function* postProducts(action:any) {
   
   try{
-    const response: AxiosResponse = yield call(ProductsService.postProducts, action.payload);
-    yield put(postProductsSuccess(response.data))
+    yield call(ProductsService.postProducts, action.payload);
+    yield put(postProductsSuccess())
   } catch (err){
     console.log(err)
     yield put(postProductsFailure())

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
 import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { Redirect, useHistory } from "react-router-dom";
 
 import * as LoginActions from '../../store/ducks/login/actions';
 
@@ -10,45 +11,40 @@ import Button from '../../components/Button';
 import LogoImg from '../../assets/logo.svg';
 import LogoImg2 from '../../assets/logo2.svg';
 
-import {Container, Logo} from './styles'
-import { Redirect } from 'react-router';
+import {Container, Logo} from './styles';
 
 const Login = () => {
-  const [authorized, setAutorized] = useState<Boolean>(false)
-  const [refresh, setRefresh] = useState(true)
+  const setToken = useSelector((state:any)=> console.log(state.LoginReducer.usersArray.accessToken))
 
-  const {register, handleSubmit} = useForm()
-  const dispatch = useDispatch()
+  const {register, handleSubmit} = useForm();
+  const dispatch = useDispatch();
+  const [auth, setAuth] = useState(false);
 
-  const checkToken = () => {
+  // const auth = localStorage.getItem('token')
+
+  const onSubmit = (data:any) => {
     const token = localStorage.getItem('token')
 
     if(token) {
-      setAutorized(true)
+      setAuth(true)
     }
-    setRefresh(!refresh)
-  }
-
-  const onSubmit = (data:any) => {
     dispatch(LoginActions.postLoginRequest(data))
-
-    checkToken();
   }
 
   return(
     <Container>
       <Logo>
-          <img src={LogoImg2} alt=""/>
-          <img src={LogoImg} alt=""/>
-        </Logo>
+        <img src={LogoImg2} alt=""/>
+        <img src={LogoImg} alt=""/>
+      </Logo>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input ref={register} name="email"  type="text" placeholder="E-mail"/>
+        <input ref={register} name="email"  type="email" placeholder="E-mail"/>
         <input ref={register} name="password"  type="password" placeholder="Senha"/>
       
         <Button type="submit">Login</Button>
-        
+
         {
-          authorized ? <Redirect to="/home"/> : <Redirect to="/"/>
+          auth && <Redirect to="/home"/>
         }
       </form>
     </Container>

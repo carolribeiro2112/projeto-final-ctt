@@ -7,7 +7,7 @@ const UsersService = {
     }
   }),
 
-  postUsers: (newUser:any) => api.post('/users', newUser, {
+  postUsers: (newUser:any) => api.post('/user', newUser, {
     headers: {
       'Authorization': `Bearer ${localStorage.getItem('token')}`
     }

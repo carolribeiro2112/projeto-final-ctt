@@ -17,8 +17,8 @@ export function* getUsers() {
 
 export function* postUsers(action:any) {
   try{
-    const response: AxiosResponse = yield call(UsersService.postUsers, action.payload);
-    yield put(postUsersSuccess(response.data))
+    yield call(UsersService.postUsers, action.payload);
+    yield put(postUsersSuccess())
   } catch (err) {
     console.log(err)
     yield put(postUsersFailure())

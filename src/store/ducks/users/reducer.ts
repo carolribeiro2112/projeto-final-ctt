@@ -35,7 +35,6 @@ const UsersReducer: Reducer = (state=initialState, action) => {
     case UsersTypes.POST_USERS_SUCCESS:
       return{
         ...state,
-        users: action.payload,
         loading: false,
       }
     case UsersTypes.POST_USERS_FAILURE:
